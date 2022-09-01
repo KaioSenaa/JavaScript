@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Itado</title>
+</head>
+<body>
+    Saldo da conta: <input type="number" name="" id="in_saldo"><br>
+    Valor do débito: <input type="number" name="" id="in_debito"><br>
+    <button onclick="analise()">Analisar conta</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function analise(){
+        var resultado = (in_saldo.value - in_debito.value)
+        if (resultado < 0){
+        div_resultado.innerHTML = `<div style = "color: red;"><strong>O saldo atual da conta corrente é de R$ ${resultado}</strong></div>`
+        }
+        else{
+            div_resultado.innerHTML = `<div style = "color: blue;"><i>O saldo atual da conta corrente é de R$ ${resultado}</i></div>`
+        }
+        
+    }
+
+</script>

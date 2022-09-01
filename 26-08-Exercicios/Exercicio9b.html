@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Última série (SITCOM) que você assistiu: <input type="text" name="" id="in_serie"><br>
+    Total de episódios que ele já assistiu: <input type="number" name="" id="in_total"><br>
+    <button onclick="botao()">Verificar nível</button> 
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function botao(){
+    var horas = Number(in_serie.value)
+    var resultado = Number(horas*22)/60
+        div_mensagem.innerHTML = `Vejo que você gosta da série ${in_serie.value}<br>`
+    if(resultado = 30){
+        div_mensagem.innerHTML += `Uau, você realmente gosta dessa série!`
+    }    
+    }
+</script>

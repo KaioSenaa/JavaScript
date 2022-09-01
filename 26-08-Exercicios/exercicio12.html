@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o peso total no elevador: <input type="number" name="" id="in_peso">
+    <button onclick="funcionar()">Ligar elevador</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function funcionar(){
+        var peso1 = Number(in_peso.value)
+        if (peso1 < 500){
+            div_mensagem.innerHTML = `Elevador vai se mover` 
+        }
+        if (peso1 >= 500){
+            div_mensagem.innerHTML = `Alguém precisa descer do elevador`
+        }
+    }
+</script>

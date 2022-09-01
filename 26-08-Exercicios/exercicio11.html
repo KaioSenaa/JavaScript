@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de filhos que você tem: <input type="number" name="" id="in_filhos">
+    <button onclick="analisar()">Analisar família</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var filhos = Number(in_filhos.value)
+        div_frases.innerHTML = ""
+        if (filhos == 1){
+            div_frases.innerHTML = `Não tem TV`
+        }
+        if (filhos >= 2){
+            div_frases.innerHTML = `Não tem internet <br>`
+            div_frases.innerHTML += `Não tem TV <br>`
+            
+        }
+        if (filhos >= 3){
+            div_frases.innerHTML = `Não tem video game <br>`
+            div_frases.innerHTML += `Não tem internet <br>`
+            div_frases.innerHTML += `Não tem TV <br>`
+        }
+        if (filhos >= 4){
+            div_frases.innerHTML = `Não tem Netflix <br>`
+            div_frases.innerHTML += `Não tem TV <br>`
+            div_frases.innerHTML += `Não tem internet <br>`
+            div_frases.innerHTML += `Não tem video game <br>`
+            
+        }
+    }
+</script>

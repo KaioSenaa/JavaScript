@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de homens: <input type="number" name="" id="in_homens"><br>
+    Quantidade de mulheres: <input type="number" name="" id="in_mulheres"><br>
+    <button onclick="calculo()">Ligar elevador</button>
+    <div id="div_mensagem"></div>
+    <!-- considerando que um homem pesa em média 90kg e uma mulher 70kg -->
+</body>
+</html>
+<script>
+    // Caso o peso seja menor que 500, exiba uma frase na cor verde abaixo do botão com a frase Elevador vai se mover, pois está com Xkg
+    function calculo(){
+        var homem = Number(in_homens.value)
+        var mulheres = Number(in_mulheres.value)
+        var calcular = Number(homem*90)+(mulheres*70)
+        var calcular2 = Number(calcular - 500)
+    if (calcular < 500){
+        div_mensagem.innerHTML = `<div style="color: green;">Elevador vai se mover, pois está com ${calcular}kg </div>`
+    }
+    else{
+        div_mensagem.innerHTML = `<div style="color: red;"> Precisa perder ${calcular2}kg para mover o elevador </div>` 
+    }
+    }
+</script>
