@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    Valor por grama de sorvete: <input type="Number" name="" id="in_grama"><br>
+    peso do sorvete (quantidade de gramas): <input type="number" name="" id="in_peso"><br>
+    <button onclick="calculo()">Mostrar valor</button>
+ <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calculo(){
+        var valor = Number(in_grama.value * in_peso.value)
+        if(valor > 10){
+            div_mensagem.innerHTML = `Esse sorvete vai comprometer a mesada.`
+        }
+        else{
+            alert (`Hoje você está maneirando`)
+        }
+    }
+</script>

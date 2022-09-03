@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor do carro a vista: <input type="number" name="" id="in_a_vista"><br>
+    a taxa de juros a.m. (ao mês): <input type="number" name="" id="in_juros"><br>
+    Quantidade de parcelas: <input type="text" name="" id="in_parcelas"><br>
+    <button onclick="calculo()">Calcular prejú</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calculo(){
+        var valor = Number(in_a_vista.value)
+        var juros = Number(in_juros.value)
+        var parcelas = Number(in_parcelas.value)
+        var calculo_juros = Number (juros/100 + 1)
+        var pg = Number ((valor/parcelas)*(((calculo_juros**parcelas)-1)/(calculo_juros - 1)))
+        var final = Number(valor*0.80)
+        var carros = Number(pg/valor)
+        div_mensagem.innerHTML = `Seu carro vai sair por um total de R$${pg.toFixed(2)}. Após 1 mês, ele já vai valer só R$${final.toFixed(2)}. Porque comprou 
+        financiado, vai pagar o correspondente a ${carros.toFixed()} carros`
+    }
+
+</script>

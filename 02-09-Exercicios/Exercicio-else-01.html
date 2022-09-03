@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Rac</title>
+</head>
+<body>
+    Informe seu nome: <input type="text" name="" id="in_nome"><br>
+    Qual modelo você deseja: <input type="text" name="" id="in_modelo"><br>
+    Valor do carro: <input type="number" name="" id="in_valor"><br>
+    Cupom: <input type="text" name="" id="in_cupom"><br>
+    <button onclick="calcular()">Efetuar compra</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var valor = Number(in_valor.value)
+        var desconto = Number(valor*0.89)  
+        if (in_modelo.value =="") {
+            alert(`Informe o modelo do carro para prosseguir com a compra!`)
+        }else { 
+                if (valor < 5000)
+                alert(`Valor inválido! O carro está barato demais`)
+         else { 
+                if (in_cupom.value == "Carro_Novo")
+                div_resultado.innerHTML = `<i style="color: green;"> Olá, ${in_nome.value}! O carro de modelo ${in_modelo.value}, de valor padrão R$${valor} sairá por R$${desconto}</i>`
+                else{
+            alert(`Cupom inválido! Desconto não será aplicado!`)
+            div_resultado.innerHTML = `<i style="color: red;">Olá, ${in_nome.value}! O carro de modelo ${in_modelo.value}, de valor padrão R$${valor} sairá por R$${valor}
+            </i>`        
+            }
+            }
+        
+
+ }
+}
+
+</script>

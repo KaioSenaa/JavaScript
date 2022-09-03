@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Migas</title>
+</head>
+<body>
+    <h1>Sorveteria 4Migas</h1>
+    <h2>Semana promocional de cobertura de chocolate e sorvetes gourmet</h2>
+    Valor por grama de sorvete: <input type="number" name="" id="in_valor"><br>
+    Peso do sorvete (quantidade de gramas): <input type="number" name="" id="in_peso"><br>
+    Tipo de cobertura: <input type="text" name="" id="in_cobertura"><br>
+    Tipo de sorvete: <input type="text" name="" id="in_sorvete">
+    <button onclick="calcular()">Calcule o custo</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+        function calcular(){
+        var valor = Number(in_valor.value)
+        var peso = Number(in_peso.value)
+        
+        if (in_sorvete.value == "G"){
+            valor = (peso * 1.89) + valor
+        }
+        else{
+            valor = valor - (peso * 0.90)
+        }
+        if (in_sorvete.value != "C"){
+            valor = (peso * 0.01) + valor
+        }
+        else{
+            valor = (valor * peso)
+        }
+        if(valor > 10){
+            div_mensagem.innerHTML = `<div style = "color: green;">O seu sorvete vai custar R$${valor} e vai comprometer a mesada</div>`
+        }
+        else{
+            div_mensagem.innerHTML = `<div style = "color: blue;"Hoje você está maneirando hoje, gastou somente R$${valor}</div>`
+        }
+
+
+}
+</script>
