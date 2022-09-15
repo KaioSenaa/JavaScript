@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="escolher_time">
+        <option value="">Selecione um Time</option>
+        <option value="https://logodetimes.com/wp-content/uploads/sao-paulo.png">São Paulo</option>
+        <option value="http://pm1.narvii.com/6611/bb44b8cf4ebbe0deb7cbc1a579422dda13886e2e_00.jpg">Corinthans</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png">Santos</option>
+        <option value="https://i.pinimg.com/474x/fe/5c/c9/fe5cc91004f036112d3db466b748e065.jpg">Palmeiras</option>
+    </select><br>
+    <img src="" id="escudos" alt="" style="width: 200px; ;">
+    <button onclick="imagem()">Ver escudo</button>
+</body>
+</html>
+<script>
+    function imagem(){
+        escudos.src = escolher_time.value;
+    }
+</script>
