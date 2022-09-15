@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos anos você já trabalhou: <input type="number" id="in_anos">
+    <select id="sel_func">
+        <option value="">Selecione o tipo de empresa</option>
+        <option value="40">Funcionário de empresa privada</option>
+        <option value="35">Funcionário de empresa pública</option>
+        <option value="45">Empreendedor</option>
+    </select>
+    <br><button onclick="calcular()">Simular</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var idade = Number(in_anos.value)
+        var tipo_empresa = Number(sel_func.value)
+        var calculo = Number(idade - tipo_empresa)
+        if(tipo_empresa != ""){
+        div_mensagem.innerHTML =`Você ainda terá que trabalhar por mais ${calculo} anos para se aposentar.`
+    }
+
+    }
+</script>

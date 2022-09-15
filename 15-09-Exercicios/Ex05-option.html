@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_tabuada" onchange="valor()">
+        <option value="">Selecione o número que deseja a tabuada</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <div id="div_valores"></div>
+</body>
+</html>
+<script>
+    function valor(){
+    var numeros = Number(sel_tabuada.value)
+    var n1 = numeros * 1
+    var n2 = numeros * 2
+    var n3 = numeros * 3
+    var n4 = numeros * 4
+    var n5 = numeros * 5
+    var n6 = numeros * 6
+    var n7 = numeros * 7
+    var n8 = numeros * 8
+    var n9 = numeros * 9
+    div_valores.innerHTML = `Você escolheu o número: ${numeros}<br>${numeros} x 1 = ${n1}<br> ${numeros} x 2 = ${n2}<br>
+    ${numeros} x 3 = ${n3} <br> ${numeros} x 4 = ${n4} <br> ${numeros} x 5 = ${n5} <br> ${numeros} x 6 = ${n6} <br> ${numeros} x 7 = ${n7} <br> ${numeros} x 8 = ${n8}<br> ${numeros} x 9 = ${n9}`
+    }
+</script>

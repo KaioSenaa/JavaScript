@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Indique qual herói quer saber a classe, escolhendo as opções</h2>
+    <select id="sel_heroi" onchange="ver_classe()">
+        <option value="">Selecione o heroi</option>
+        <option value="Classe S">Metal Nigth</option>
+        <option value="Classe A">Máscara Doce</option>
+        <option value="Classe S">Prisioneiro Puri Puri</option>
+        <option value="Classe B">Fubuki</option>
+        <option value="Classe C">Cavaleiro sem licença</option>
+    </select>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function ver_classe(){
+        var classe = sel_heroi.value
+        if (classe != ""){
+        div_mensagem.innerHTML = `O heroi que você selecionou é ${classe}`
+        }
+    }
+</script>
