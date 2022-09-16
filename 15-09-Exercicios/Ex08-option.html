@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu salário: <input type="number" id="in_salario">
+    <select id="sel_descontos">
+        <option value="">Selecione uma opção</option>
+        <option value="0.10">INSS</option>
+        <option value="0.20">IR</option>
+        <option value="0.05">VT</option>      
+    </select><br>
+    <button onclick="calculo()">Ver desconto</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calculo(){
+        var desconto = Number(sel_descontos.value)
+        var salario = Number(in_salario.value)
+        var calcular = Number (salario * desconto) 
+        div_resultado.innerHTML = `Valor desse desconto é de: R$${calcular}`
+    }
+</script>
