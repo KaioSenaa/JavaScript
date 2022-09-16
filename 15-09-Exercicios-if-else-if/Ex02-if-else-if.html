@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a sua renda familiar: <input type="number" id="in_renda">
+    <button onclick="classe()">Analisar Renda</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function classe(){
+        var renda = Number(in_renda.value)
+        var classes = "Você é da classe"
+        if (renda <= 250){
+            classes += ` E`
+        } else if(renda <=900){
+            classes += ` D`
+        } else if (renda <=2500){
+            classes += ` C` 
+        } else if (renda <=9500){
+            classes += ` B`
+        } else {
+            classes += ` A`
+        }
+        div_resultado.innerHTML = classes
+
+    }
+</script>

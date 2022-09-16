@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite sua altura:<input type="number" id="in_altura" onkeyup="digitando()">
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function digitando(){
+        var altura = Number(in_altura.value)
+        var inicio = "Você pode "
+        if (altura <= 1.65){
+             inicio += ` ser piloto de corrida`
+        } else if(altura <= 1.80){
+             inicio +=` ser jogador de futebol`
+        } else{
+             inicio += `ser jogador de vôlei ou basquete`
+
+        }
+    }
+</script>
