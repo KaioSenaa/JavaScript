@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome: <input type="text" id="in_nome"><br>
+    Preço <input type="number" id="in_preco"><br>
+    <button onclick="analisar()">Vou comprar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var nome = in_nome.value
+        var preco = Number(in_preco.value)
+        if(nome == 'uva' && preco < 8.50)
+        div_mensagem.innerHTML = `Vou comprar`
+        else{
+            div_mensagem.innerHTML = `Sem fruta hoje :(`
+        }
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="Sel_proteina" onchange = "analisar()">
+        <option value="">Escolha uma proteina</option>
+        <option value="O">Ovo</option>
+        <option value="S">Soja</option>
+        <option value="C">Carne</option>
+    </select> 
+    <select id="Sel_sobremesa" onchange = "analisar()">
+        <option value="">Escolha uma sobremesa</option>
+        <option value="P">Pudim</option>
+        <option value="Pe">Petit Gateau</option>
+        <option value="Briga">Brigadeiro de Soja</option>
+    </select> <br>
+</body>
+</html>
+<script>
+    function analisar(){
+        var proteina = Sel_proteina.value
+        var sobremesa = Sel_sobremesa.value
+        if(proteina == 'S' && sobremesa =='Briga'){
+            alert(`Você poderia ser vegano(a)`)
+        } else{
+            alert(`Você NÃO pode ser vegano(a)`)
+        }
+    }
+</script>
