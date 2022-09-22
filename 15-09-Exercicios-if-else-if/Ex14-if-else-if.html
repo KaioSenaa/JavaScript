@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lutador</h2>
+    <div id="div_vida"></div>
+    <div id="div_frase"></div>
+    <img src="" id="imagem" alt="" style="width: 100px; ;">
+    <button onclick="dano()">Apanhar</button>
+    <button onclick="aumentar()">Concentrar força</button>
+
+</body>
+</html>
+<script>
+    var vida = 1000
+    function dano(){
+        vida = vida - 100
+        imagem.src = vida.value
+        if (vida > 0){
+            div_vida.innerHTML = `Vida: ${vida}`
+            div_frase.innerHTML = `<img src ="https://conteudo.imguol.com.br/c/esporte/fe/2020/05/07/conor-mcgregor-aceita-desafio-para-lutar-boxe-com-oscar-de-la-hoya-1588888303880_v2_1x1.jpg">`
+        } else{
+            vida = 0
+            div_vida.innerHTML = `${vida}`
+            div_frase.innerHTML = `Lutador já era<br>`
+            div_frase.innerHTML += `<img src ="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/23756_D112D42D6D7B84F2.jpg?w=1024">`
+        }
+    }
+    function aumentar(){
+        vida * 0.5
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Controle financeiro</h2>
+    <input type="number" id="in_economia">
+    <button onclick="conferindo()">Poder de compra</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function conferindo(){
+    var economia = Number(in_economia.value)
+    if (economia <= 0 ){
+        div_frase.innerHTML = `Nada de compras 😢`
+    } else if (economia <= 100){
+        div_frase.innerHTML = `Viajem de ida e volta pra Praia Grande`
+    } else if (economia < 400){
+        div_frase.innerHTML = `Viajem de ida e volta pra Praia Grande <br>`
+        div_frase.innerHTML += `Uma boa moto usada`
+    } else{
+        div_frase.innerHTML = `Uma boa moto usada <br>` 
+        div_frase.innerHTML += `Mais alguma bobagem legal`
+    }
+}
+</script>

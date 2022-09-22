@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Finanças</h2>
+    <div id="div_valor"></div>
+    <button onclick="guardar5()">Guardar R$5,00</button>
+    <button onclick="gastar10()">Gastar R$10,00</button>
+</body>
+</html>
+<script>
+    var valor = 0
+    function guardar5(){
+        valor = valor + 5.00
+        div_valor.innerHTML = `Você guardou R$5,00. Seu valor atual é de R$${valor}`
+        if (valor >= 0){
+            div_valor.innerHTML += `<div style = "color:blue;">Finanças OK!</div>`
+    } else if (valor > 100){
+        div_valor.innerHTML = `#ostentação`
+    }
+    }
+    function gastar10(){
+        valor = valor - 10.00
+        div_valor.innerHTML = `Você gastou R$10,00. Seu valor atual é de R$${valor}<br>`
+        if (valor < 0){
+        div_valor.innerHTML +=`<div_valor style = "color:red;">Finanças em perigo!</div><br>` 
+        } else if (valor >= 0){
+            div_valor.innerHTML += `<div style = "color:blue;">Finanças OK!</div>`
+        } else if (valor < -20){
+        div_valor.innerHTML = `Seu nome vai ficar sujo, hein?`
+    }
+}
+</script>

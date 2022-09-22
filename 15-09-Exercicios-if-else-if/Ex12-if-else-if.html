@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CONTADOR</h2>
+    <div id="div_contador"></div>
+    <button onclick="somar()">Clica neu</button><br>
+    <button onclick="reset()">Resetar clicks</button>
+</body>
+</html>
+<script>
+    var clicks = 0
+    function somar(){     
+        clicks++
+        if (clicks < 5){
+            div_contador.innerHTML = `Dedo fraquinho, hein. Clicks = ${clicks}`
+        } else if (clicks <= 10){
+            div_contador.innerHTML = `Dedo bom, mano. Clicks = ${clicks}`
+        } else if (clicks <= 15){
+            div_contador.innerHTML = `Gosta de clicar, hein! Clicks = ${clicks}`
+        } else{
+            div_contador.innerHTML = `Eita dedo nervoso! Clicks = ${clicks}`
+        }
+    }
+    function reset(){
+        clicks = 0
+        div_contador.innerHTML = `Clicks resetados` 
+    }
+</script>
