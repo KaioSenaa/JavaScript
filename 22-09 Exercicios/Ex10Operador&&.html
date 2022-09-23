@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    Digite a altura inicial: <input type="number" id="in_inicial" onkeyup="verificacao()"><br>
+    Digite a altura final: <input type="number" id="in_final" onkeyup="verificacao()"><br>
+    Digite seu nome: <input type="text" id="in_nome"><br>   
+    Digite sua altura: <input type="number" id="in_altura"><br>
+    <button onclick="analisar()">Cadastrar</button>
 </body>
 </html>
+<script>
+    function analisar(){
+        var inicial = Number(in_inicial.value)
+        var final = Number(in_final.value)
+        var conta = inicial - final
+        var nome = in_nome.value
+        var altura = Number(in_altura.value) 
+        if (inicial > 1 && final > inicial && altura >= conta){
+            alert(`O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`)
+        } else{
+               alert(`Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos`) 
+        }
+    }
+    function verificacao(){
+        var inicial = Number(in_inicial.value)
+        var final = Number(in_final.value)
+        var conta = final - inicial
+        var altura = Number(in_altura.value)
+        if (altura < conta){
+            alert (`Não foi possível seguir em frente!!`)
+        }
+    }
+</script>

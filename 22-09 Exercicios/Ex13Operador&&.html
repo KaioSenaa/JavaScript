@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a quantidade de anos que já trabalhou: <input type="number" id="in_tempo"><br>
+    Digite quantos kilos sua plantação rendeu: <input type="number" id="in_kilos"><br>
+    Quantos dias você falou que estava doente: <input type="number" id="in_doente"><br>
+    <button onclick="analisar()">Deu match</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var tempo = Number(in_tempo.value)
+        var kilos = Number(in_kilos.value)
+        var doente = Number(in_doente.value)
+        var calculo = Number(tempo) - 5  
+        if(tempo >=5 && kilos >=300 && doente <= 5){
+            div_mensagem.innerHTML = `<img src="https://thumbs.dreamstime.com/z/noivos-engra%C3%A7ados-que-t%C3%AAm-o-divertimento-no-parque-105392183.jpg" alt="">Minha filha será sua!`
+        } else{
+            div_mensagem.innerHTML = `<img src="https://noticiasdatv.uol.com.br/media/_versions/_versions/terry_crews_late_night_julius_free_big_fixed_large.jpg"alt="">Deu ruim! Trabalhe mais ${calculo} anos `
+        }
+    }
+</script>

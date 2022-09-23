@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cartão fidelidade</h2>
+    Quantas passagens você deseja: <input type="number" id="in_passagens"><br>
+    <button onclick="analisar()">Comprar</button> 
+</body>
+</html>
+<script>
+    function analisar(){
+        var pass = Number(in_passagens.value)
+        var desconto1 = Number((pass * 4.4)- 4.4*0.03)
+        var desconto2 = Number((pass * 4.4)- 4.4 *0.05)
+        var desconto3 = Number((pass * 4.4)- 4.4*0.07)
+        if (pass >= 8 && pass <=19){
+            alert(`Total a pagar: ${desconto1.toFixed(2)}`)
+        } else if (pass >=20 && pass <=49){
+            alert(`Total a pagar: ${desconto2.toFixed(2)}`)
+        } else if (pass == 50){
+            alert(`Total a pagar: ${desconto3.toFixed(2)}`)
+        } else{
+            alert(`Quantidade inválida para o Fidelidade!`)
+        }
+    }
+</script>
