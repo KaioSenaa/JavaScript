@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_pagamentos">
+        <option value="Parcelado">Crédito</option>
+        <option value="a_vista">Débito</option>
+        <option value="Boleto">Boleto</option>
+        <option value="a_vista">Dinheiro</option>
+    </select>
+    <button onclick="analisar()">Analisar compra</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var pagamento = sel_pagamentos.value
+        if(pagamento == "Parcelado" || pagamento == "Boleto"){
+            div_mensagem.innerHTML = `Pagamento poderá ser parcelado`
+        }else{
+            div_mensagem.innerHTML = `Você terá que pagar a vista`
+        }
+    }
+</script>
