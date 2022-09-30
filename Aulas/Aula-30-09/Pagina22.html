@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onkeyup="copiar()" placeholder="Texto" type="Texto"  id="in_texto">
+    <input placeholder="Cópia" type="number"  id="in_copia">
+</body>
+</html>
+<script>
+    function copiar(){
+        var texto = in_texto.value
+        var textoUnderline = texto.replaceAll(' ','__')
+        in_copia.value = textoUnderline
+
+    }
+</script>
