@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input palceholder ="Temperatura" id="in_temp">
+    <br>
+    <button onclick="analisar()">Analisar</button>
+</body>
+</html>
+<script>
+    function analisar(){
+        var temperatura = Number(in_temp.value)
+
+        //esta variável só pode ser true ou false
+        // portando o tipo dela booleano (boolean) Aquela que tem os valores true or false
+        var temp_agradavel = temperatura > 23
+        if (temp_agradavel){
+            alert("Temperatura agradável")
+        }
+        if(!temp_agradavel){ //o operador ! inverte uma verdade, ou seja, seria igual a temp_agradevel == false
+            alert(`Temperatura NÃO ESTÁ agradável`)
+        }
+    }
+</script>
