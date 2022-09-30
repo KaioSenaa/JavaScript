@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Selecione o tipo de arroz <select id="sel_alimentos">
+        <option value=""></option>
+        <option value="integral">Integral</option>
+        <option value="normal">Branco</option>
+    </select><br>
+    Tempo de cozimento: <input type="text" id="in_tempo"><br>
+    Quantidade de sal em (g): <input type="number" id="in_sal"><br>
+    <button onclick="analisar()">Avaliar arroz</button>
+    <div id="div_mensagem"></div>
+    <img  id="img"src="" alt="">
+</body>
+</html>
+<script>
+    function analisar(){
+        var tipo = (sel_alimentos.value)
+        var tempo = Number(in_tempo.value)
+        var sal = Number(in_sal.value)
+        if (tipo == 'normal' && tempo == 10 && sal <=10 || tipo == 'integral' && tempo == 20 && sal <=15) {
+            div_mensagem.innerHTML = `<img src="https://www.acasaencantada.com.br/wp-content/uploads/2019/01/arroz-perfeito-1200x675.jpg"> Arroz perfeito`
+        }else{
+            div_mensagem.innerHTML = `<img src="https://vejasp.abril.com.br/wp-content/uploads/2016/12/abre01266.jpg"> Seu arroz não está perfeito`
+        }
+    }
+</script>
