@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero: <input type="number" id="in_numero"><br>
+    Digite um intervalo crescente entre este primeiro numero: <input type="number" id="in_numero2"><br>
+    <button onclick="analisar()">S2 Pares</button>
+    <div id="div_numeros"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var numero = Number(in_numero.value)
+        var numero2 = Number(in_numero2.value)
+        var contador = numero 
+        while(contador <= numero2){
+            if(contador % 2 == 0){
+                div_numeros.innerHTML += `${contador}<br>`
+            }
+            contador++
+        }
+
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos mundiais (FIFA) seu time tem: <input type="number" id="in_mund"><br>
+    <button onclick="analisar()">Ver troféus de mundiais FIFA</button>
+    <div id="div_img"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var mund = Number(in_mund.value)
+        var contador = 1
+        div_img.innerHTML = ``
+        if(mund <= 0){
+                div_img.innerHTML += `<img src="https://s2.glbimg.com/mdOw21C819wVTdB-P4G29oklk1M=/0x70:828x723/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/A/6/aMccrOSAmFQ67JWgXPlg/rivais-zoam-o-palmeiras-apos-perder-o-mundial-para-o-chelsea.jpg" width = "500px">`
+            }
+        while (contador <= mund){
+                div_img.innerHTML += `${contador}<img src="data:image/jpeg;base64,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"> <br>`
+                contador++
+            } 
+}
+</script>
