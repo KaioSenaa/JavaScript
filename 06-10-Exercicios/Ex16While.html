@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos elefantes: <input type="number" placeholder="Quantidade de elefantes" id="in_quant"><br>
+    <button onclick="analisar()">Atazanar a médium</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var contador = 0
+        var quant = Number(in_quant.value) 
+        
+        while(contador < quant){
+            div_frase.innerHTML += ` <br> 1 elefante incomoda muita gente!<br>`
+            
+            contador++
+            
+            div_frase.innerHTML += `${contador} elefantes `
+            var contInc = 0
+            while(contInc < contador){
+                div_frase.innerHTML += `incomodam, `
+                contInc++
+        }
+        div_frase.innerHTML += `muito mais`
+        }
+        
+    }
+</script>
