@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    A cada quantos dias você faz musculação: <input type="number" id="in_dias"> <br>
+    <button onclick="analisar()">Exibir rotina mensal</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var contador = 1
+        var mes = 30
+        var dias = Number(in_dias.value)
+        var calculo = 7 - dias
+        div_frases.innerHTML = ``
+        while(contador < 31){   
+        if(contador % dias == 1)
+            div_frases.innerHTML += `Dia ${contador} - Musculação <br>`
+            else{
+                div_frases.innerHTML += `Dia ${contador} - Comer, dormir etc <br>`
+            }
+            contador++
+        }
+    }
+</script>

@@ -15,9 +15,11 @@
 <script>
     function analisar(){
         var voltas = Number(in_voltas.value)
-        var contador = 0
+        var contador = 1
         while(contador <= voltas){
-
+            div_frases.innerHTML += `Carro dando a ${contador}ª volta<br>`
+            contador++ 
         }
+        div_frases.innerHTML += `Corrida finalizada!`
     }
 </script>
