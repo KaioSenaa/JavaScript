@@ -7,7 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    Quantas pessoas vão entrar no carro: <input type="number" id="in_pessoas">
+    Quantas pessoas vão entrar no carro: <input type="number" id="in_pessoas"><br>
+    <button onclick="analisar()">#Partiu Carona</button>
+    <div id="div_frase"></div>
     
 </body>
 </html>
+<script>
+    function analisar(){
+        var contador = 1
+        var pess = Number(in_pessoas.value)
+        div_frase.innerHTML = ``
+        div_frase.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)<br>`
+        while(contador <= pess){
+            if(contador >= 2 && contador <= 5){
+            div_frase.innerHTML += `Entrou o ${contador}º passageiro<br>`
+            } if(contador >= 6){
+                div_frase.innerHTML += `O ${contador}º passageiro terá que esperar!<br>`
+            }
+            
+        contador++
+        }
+    }
+</script>

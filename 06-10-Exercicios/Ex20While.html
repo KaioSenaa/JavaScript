@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos ônibus você precisa pegar: <input type="number" id="in_onibus"><br>
+    Quantos trens você precisa pegar: <input type="number" id="in_trens"><br>
+    Quantos você metrôs precisa pegar: <input type="number" id="in_metros"><br>
+    <button onclick="analisar()">#Partiu Trajeto</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var contador = 1
+        var contador2 = 1
+        var contador3 = 1
+        var buzao = Number(in_onibus.value)
+        var trens = Number(in_trens.value)
+        var metro = Number(in_metros.value)
+        div_frases.innerHTML = ``
+    while(contador <= buzao){
+        if(contador == 2){
+            div_frases.innerHTML += `<div style="color:red;">Pegando o ${contador}º buzão Começando a cansar</div><br>`
+        } else if (contador >= 3){
+        div_frases.innerHTML += `<div style="color:red;">Pegando o ${contador}º buzão Já cansado! </div><br>`
+        } else{
+        div_frases.innerHTML += `<div style="color:red;">Pegando o ${contador}º buzão </div><br>` 
+        }
+    contador++} 
+    while(contador2 <= trens){
+        if(contador2 == 2){
+            div_frases.innerHTML += `<div style="color:green;">Pegando o ${contador2}º trem Começando a cansar</div><br>`
+        } else if (contador2 >= 3){
+        div_frases.innerHTML += `<div style="color:green;">Pegando o ${contador2}º trem Já cansado! </div><br>`
+        } else{
+        div_frases.innerHTML += `<div style="color:green;">Pegando o ${contador2}º trem </div><br>` 
+        }
+        contador2++  
+    }
+    while(contador3 <= metro){
+        if(contador3 == 2){
+            div_frases.innerHTML += `<div style="color:blue;">Pegando o ${contador3}º trem Começando a cansar</div><br>`
+        } else if (contador3 >= 3){
+        div_frases.innerHTML += `<div style="color:blue;">Pegando o ${contador3}º trem Já cansado! </div><br>`
+        } else{
+        div_frases.innerHTML += `<div style="color:blue;">Pegando o ${contador3}º trem </div><br>` 
+        }
+        contador3++
+    }
+   }
+</script>

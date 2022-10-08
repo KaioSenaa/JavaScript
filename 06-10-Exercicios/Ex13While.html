@@ -29,10 +29,16 @@
         var numero = Number(in_numero.value)
         div_tabuada.innerHTML = ``
         while(contador <= numero){
-            var conta = contador * tabuada
-            div_tabuada.innerHTML += `${tabuada} x ${contador} = ${conta}<br> `
-            contador++
+                var conta = contador * tabuada    
+                if(contador % 2 == 0)
+                div_tabuada.innerHTML += `<div style="color: blue;">${tabuada} x ${contador} = ${conta}</div><br> `
+                
+                if(contador % 2 == 1){
+                var conta = contador * tabuada
+                div_tabuada.innerHTML += `<div style="color: red;">${tabuada} x ${contador} = ${conta}</div><br> `
+                
             }
+            contador++}    
         }
     
 </script>
