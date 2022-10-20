@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reptindo mantras</h2>
+    <button onclick="analisar()">Repetir 5x</button>
+    <br>
+    <input type="number" placeholder="Repeticões" id="in_repeticoes">
+    <button onclick="repetir()">Repetir</button>
+    <div id="div_repeticoes"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        div_repeticoes.innerHTML = ``
+        // 1 -> incialização 2-> condição de repetição 3-> Última linha virtual do for
+        for (var contador = 0; contador < 5; contador++){
+            div_repeticoes.innerHTML += `Foco, força e fé<br>`
+        }
+    }
+    function repetir(){
+        div_repeticoes.innerHTML = ``
+        for (var repetir = 0; repetir < in_repeticoes.value; repetir++){
+            div_repeticoes.innerHTML += `${repetir+1} - É TETRA!!!<br>
+            `
+        }
+    }
+    
+</script>
