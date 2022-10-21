@@ -8,10 +8,18 @@
 </head>
 <body>
     <button onclick="analisar()">Números cabalísticos</button>
+    <div id="div_mensagem"></div>
 </body>
 </html>
 <script>
     function analisar(){
-        
+        div_mensagem.innerHTML = ``
+        for(var contador = 1; contador < 16; contador++){
+            if(contador == 3 || contador == 4 || contador == 7 || contador == 10 || contador ==12){
+                div_mensagem.innerHTML += ``
+            } else{
+                div_mensagem.innerHTML += `${contador}<br>`
+            }
+        }
     }
 </script>
