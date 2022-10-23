@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="analisar()">Ver a Lua</button>
+    <div id="div_img"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var dias = parseInt(1 + Math.random() * 31)
+        div_img.innerHTML = `Numero sorteado: ${dias}`
+        if(dias >= 1 && dias <= 7){
+            div_img.innerHTML = `Lua nova: <br> <img src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png">`
+        } else if(dias >= 8 && dias <= 16){
+            div_img.innerHTML = `Lua cheia: <br> <img src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png">`
+        } else if(dias >=17 && dias <= 22){
+            div_img.innerHTML = `Lua minguante: <br> <img src = "https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png">`
+        } else{
+            div_img.innerHTML = `Lua crescente: <br> <img src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png">`
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="analisar()">Sortear Time</button>
+    <div id="div_img"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var escudos = Math.random()
+        if(escudos < 0.3){
+        div_img.innerHTML = `<img src ="https://pbs.twimg.com/media/FOVAF6aXMAEGOlr.jpg"width = "150px">`
+        } else if(escudos < 0.5){
+        div_img.innerHTML = `<img src = "https://www.lance.com.br/files/main_album/uploads/2017/07/17/596ca2e99cf57.jpeg" width = "150px">`
+        } else if(escudos < 0.7){
+        div_img.innerHTML = `<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png" width = "150px">`
+        }else{
+        div_img.innerHTML = `<img src = "https://i.pinimg.com/474x/fe/5c/c9/fe5cc91004f036112d3db466b748e065.jpg" width = "150px">`
+    }
+}
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dado1()">Jogador 1 jogar dadinho</button><br>
+    <div id="div_mensagem1"></div><br>
+    <button onclick="dado2()">Jogador 2 jogar dadinho</button><br>
+    <div id="div_mensagem2"></div><br>
+
+</body>
+</html>
+<script>
+    var dado01 = 0
+    var dado02 = 0
+    function dado1(){
+        div_mensagem2.innerHTML = `` 
+        dado01 = parseInt(1 + Math.random() * 6)
+        div_mensagem1.innerHTML = `O dado nº 1 caiu no número: ${dado01}`
+    }
+    function dado2(){
+        dado02 = parseInt(1 + Math.random()* 6)
+        div_mensagem2.innerHTML = `O dado nº 2 caiu no número: ${dado02}<br>`
+        if(dado01 > dado02){
+            div_mensagem2.innerHTML += `Jogador 1 venceu!!`
+        } else if (dado02 > dado01){
+            div_mensagem2.innerHTML += `Jogador 2 venceu!!`
+        } else{
+            div_mensagem2.innerHTML += `EMPATE`
+        }
+    }
+</script>

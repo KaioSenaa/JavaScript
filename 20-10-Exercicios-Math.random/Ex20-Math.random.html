@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_informacao">
+        Jogador 1: 0 <br>
+        Jogador 2: 0 <br>
+        Empate: 0 <br>
+    </div>
+    <button onclick="analisar()">Jogar</button>
+</body>
+</html>
+<script>
+    var dado1 = 0
+    var dado2 = 0
+    var empate = 0
+    function analisar(){
+        var jogar1 = parseInt(1 + Math.random() * 6)
+        var jogar2 = parseInt(1 + Math.random() * 6)
+        dado1 = dado1 + jogar1
+        dado2 = dado2 + jogar2
+        
+        if(dado1 > dado2){
+        div_informacao.innerHTML = `Jogador 1: ${dado1} <br>
+        Jogador 2: ${dado2} <br>
+        Empate: ${empate}<br>
+        O jogador 1 está vencendo`
+    }
+    else if(dado2 > dado1){
+        div_informacao.innerHTML = `Jogador 1: ${dado1} <br>
+        Jogador 2: ${dado2} <br>
+        Empate: ${empate}<br>
+        O jogador 2 está vencendo`
+    } else{
+        div_informacao.innerHTML = `Jogador 1: ${dado1} <br>
+        Jogador 2: ${dado2} <br>
+        Empate: ${empate++}<br>
+        Jogo empatado`
+    }
+    }
+</script>

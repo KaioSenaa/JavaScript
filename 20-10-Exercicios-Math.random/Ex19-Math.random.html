@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu nome: <input type="text" id="in_nome"><br>
+    Digite um número de 0 à 10: <input type="number" id="in_numero1"><br>
+    Digite mais um número de 0 à 10: <input type="number" id="in_numero2"><br>
+    Digite outro numero de 0 à 10: <input type="number" id="in_numero3"><br>
+    <button onclick="analisar()">Sortear</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var nome = in_nome.value
+        var n1 = Number(in_numero1.value)
+        var n2 = Number(in_numero2.value)
+        var n3 = Number(in_numero3.value)
+        var contador = 1
+        if(n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10 || n3 < 0 || n3 > 10){
+            alert(`O número deve ser entrar 0 e 10`)
+        }else{
+        while(sorteio != n1 && sorteio != n2 && sorteio != n3){
+            var sorteio = parseInt(Math.random()*10)
+            contador++ }
+            
+                div_mensagem.innerHTML = `Parabéns, ${nome} você foi sorteado(a) após ${contador} sorteios!`
+        }
+    }
+</script>

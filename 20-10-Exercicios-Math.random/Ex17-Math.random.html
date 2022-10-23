@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="div_numero">Numeros pares: 0 <br>
+        Numeros impares: 0  </div> 
+    <button onclick="analisar()">Sortear número</button>
+    
+</body>
+</html>
+<script>
+    var contador = 0
+    var contadorimp = 0
+    function analisar(){ 
+        var sorteio = parseInt(-30 + Math.random() * (-9 + -30)) 
+        if (sorteio % 2 == 0)
+            div_numero.innerHTML = `Numeros pares: ${contador++} <br>
+            Numeros impares: ${contadorimp}`
+        else
+            div_numero.innerHTML = `Numeros pares: ${contador} <br>
+            Numeros impares: ${contadorimp++}`
+    
+    }
+    
+</script>
