@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebe pouco ou muito?</title>
+</head>
+
+<body>
+
+    <input placeholder="Quantas taças" id="in_tacas"> <br>
+    <input placeholder="Preço da taça" id="in_preco"> <br>
+    Qual sua tolerância a álcool? <select id="sel_tipo">
+        <option value="fraco">Fraco pra bebida</option>
+        <option value="medio">Bebe todo final de semana</option>
+        <option value="brabo">Só fica bêbado com Querosene</option>
+    </select>
+    <br>
+    <button onclick="beber()">Tomar vinho</button>
+
+    <div id="div_resultado"></div>
+    <img id="img_bebida">
+
+</body>
+
+</html>
+<script>
+    function beber(){
+        var tacas = Number(in_tacas.value)
+        var preco = Number(in_preco.value)
+        var niveis = sel_tipo.value
+        var total = preco * tacas
+        if (tacas < 0 || tacas > 30) {
+            alert(`Só é possível beber de 0 a 30 taças`)
+        } else if (preco < 0.01) {
+            alert(`Onde já se viu vinho grátis?`)
+        }
+        else if (preco >= 0.01 && tacas >= 1 || tacas <= 30) {
+            div_resultado.innerHTML = `Zé Buduia tomou um total de ${tacas} taças de vinho, pagando R$ ${total} por isso<br>`
+            if (niveis == "fraco" && tacas >= 1 && tacas <= 2) {
+                    div_resultado.innerHTML += `levemente embriagada:<br> <img id="img_bebida" src= "levemente.png">`               
+            }else if(niveis == "fraco" && tacas >= 3 && tacas <= 4){
+                    div_resultado.innerHTML +=`visivelmente embriagada:<br> <img id="img_bebida" src= "visivelmente.png">`
+            }else if (niveis == "fraco" && tacas >= 5){
+                    div_resultado.innerHTML +=`super bêbado: <br> <img id="img_bebida" src= "superbebado.png">`
+            }else if (niveis == "medio" && tacas >= 3 && tacas <= 4){
+                    div_resultado.innerHTML +=`levemente embriagada: <br> <img id="img_bebida" src= "levemente.png">`
+            }else if (niveis == "medio" && tacas >= 5 && tacas <= 7){
+                    div_resultado.innerHTML +=`visivelmente embriagada:<br> <img id="img_bebida" src= "visivelmente.png">`
+            }else if (niveis == "medio" && tacas >= 8){
+                    div_resultado.innerHTML +=`super bêbado: <br> <img id="img_bebida" src= "superbebado.png">`
+            }else if (niveis == "brabo" && tacas >= 10 && tacas <= 13){
+                    div_resultado.innerHTML += `levemente embriagada:<br> <img id="img_bebida" src= "levemente.png">`    
+            }else if (niveis == "brabo" && tacas >= 14 && tacas <= 19){
+                    div_resultado.innerHTML += `visivelmente embriagada:<br> <img id="img_bebida" src= "visivelmente.png">`
+            }else if (niveis == "brabo" && tacas >= 20){
+                    div_resultado.innerHTML += `super bêbado: <br> <img id="img_bebida" src= "superbebado.png">`
+            }
+    }
+}
+</script>

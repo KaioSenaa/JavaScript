@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear 1981</button>
+</body>
+</html>
+<script>
+    function sortear(){
+        var contador = 1
+        while(true){
+            var numero = parseInt(Math.random()*5001)
+            if(numero == 1981){
+                alert (`Sorteou finalmente`)
+                break
+            }
+        contador++}
+        alert(`Sorteio finalizado!`)
+        alert(`Foram realizados ${contador} tentativas até o número desejado!`)
+        
+    }
+</script>

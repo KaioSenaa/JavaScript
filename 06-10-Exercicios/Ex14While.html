@@ -15,13 +15,11 @@
 <script>
     function analisar(){
         var contador = 1
-        var mes = 30
         var dias = Number(in_dias.value)
-        var calculo = 7 - dias
         div_frases.innerHTML = ``
         while(contador < 31){   
-        if(contador % dias == 1)
-            div_frases.innerHTML += `Dia ${contador} - Musculação <br>`
+        if(contador % dias == 1){
+            div_frases.innerHTML += `Dia ${contador} - Musculação <br>`}
             else{
                 div_frases.innerHTML += `Dia ${contador} - Comer, dormir etc <br>`
             }

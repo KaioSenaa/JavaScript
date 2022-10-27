@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Quiosque Mirosmar - Controle de Vendas</h1>
+    <h2>--------------------Abertura do quiosque--------------------</h2>
+    Quantidade de Água engarrafada: <input type="number" id="in_qtdAgua"><br>
+    Quantidade de Coco fechado: <input type="number" id="in_qtdcoco"><br>
+    <button onclick="analisar()">Abrir o quiosque</button>
+    <div id="div_mensagem"></div>
+    Quantidade vendida: <input type="number" id="in_qtdvendida">
+    <select id="sel_produto">
+        <option value="">Selecione o produto</option>
+        <option value="Côco fechado">Coco fechado</option>
+        <option value="Água engarrafada">Água engarrafada</option>
+    </select>
+    <button onclick="analisar1()">Registrar venda</button>
+    <button style="background-color:red ;" onclick="analisar2()">Encerrar turno</button>
+    <div id="div_mensagem1"></div>
+</body>
+
+</html>
+<script>
+    div_mensagem.innerHTML = `<h2>---------Estoque Inicial----------</h2>
+    Água engarrafada: 0 <br>
+    Coco fechado: 0 <br>
+    <h2>--------Registro de Operações de venda-----------</h2> <br>`
+    var coco = 0
+    var agua = 0
+    
+    function analisar() {
+         agua = Number(in_qtdAgua.value)
+        coco = Number(in_qtdcoco.value)
+        var produtos = sel_produto.value
+        div_mensagem.innerHTML = ``
+        if (agua < 100) {
+            div_mensagem.innerHTML = `Com essa quantidade de Água engarrafada não dá para abrir o quiosque <br>`
+        } if (coco < 200) {
+            div_mensagem.innerHTML += `Com essa quantidade de Coco fechado não dá para abrir o quiosque <br>`
+        } else if (agua >= 100 && agua <= 1000) {
+            div_mensagem.innerHTML += `Engarrafe mais água de coco <br>`
+            if (coco >= 200 && coco <= 2000) {
+                div_mensagem.innerHTML += `Compre mais cocos`
+            }
+            div_mensagem.innerHTML += `<h2>---------Estoque Inicial----------</h2>
+            Água engarrafada: ${agua}<br>
+            Coco fechado: ${coco}<br>
+            <h2>--------Registro de Operações de venda-----------</h2> <br>`
+        }
+        
+    }
+    var vendas = 0
+    
+    function analisar1(){  
+        var produtos = sel_produto.value
+        vendas = Number(in_qtdvendida.value)
+        if (produtos == "Água engarrafada") {
+            agua = agua - vendas
+            div_mensagem1.innerHTML += `Com a venda de ${vendas} ${produtos} o saldo no estoque é de ${agua}<br>`
+            
+        } if (produtos == "Côco fechado") {
+            coco = coco - vendas
+            div_mensagem1.innerHTML += `Com a venda de ${vendas} de ${produtos} o saldo no estoque é de ${coco}<br>`
+        }
+        
+    }
+        function analisar2() {
+            
+            var fatia = (vendas / total_vendas)/100
+            var total_vendas = coco + agua
+            div_mensagem1.innerHTML = ``
+
+            div_mensagem1.innerHTML = `Vendas de Água engarrafada<br>
+            Saldo de produto no estoque: ${agua}<br>
+            Quantidade de vendas: ${vendas}<br>
+            Porcentagem das vendas: ${total_vendas}%<br><br>
+            Vendas de Coco Fechado<br>
+            Saldo de produto no estoque: ${coco}<br>
+            Quantidade de vendas: ${vendas}<br>
+            Porcentagem das vendas: ${total_vendas}%`
+            
+            
+        }
+</script>

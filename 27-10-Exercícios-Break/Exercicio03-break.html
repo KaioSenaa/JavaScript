@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortear()">Ver minha sorte</button>
+    <div id="div_img"></div>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function sortear() {
+        var contador = 1
+        var contador_cor = 0
+        var contador_carta = 0
+        div_img.innerHTML = ``
+        div_mensagem.innerHTML = ``
+        while (contador < 22) {
+            var sorteador = parseInt(Math.random() * 3)
+            if (sorteador == 1) {
+                div_img.innerHTML += `<img src = "https://img.freepik.com/vetores-gratis/carta-de-baralho-as-de-paus-isolada_1308-80924.jpg" width = "100px">`
+                contador_carta++
+                if (contador_carta == 11) {
+                    div_mensagem.innerHTML = `Você tem mais sorte no jogo`
+                    break
+                }
+            }
+            else {
+                div_img.innerHTML += `<img src = "https://static5.depositphotos.com/1001759/463/i/600/depositphotos_4634746-stock-photo-red-heart-isolated-on-white.jpg" width = "100px">`
+                contador_cor++
+                if(contador_cor == 11){
+                    div_mensagem.innerHTML = `Você tem mais sorte no amor`
+                    break
+                }
+            }
+            contador++
+        }
+    } 
+</script>

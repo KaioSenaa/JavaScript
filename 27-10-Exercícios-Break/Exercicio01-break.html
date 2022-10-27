@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número da sorte: <input type="number" id="in_sorte"><br>
+    <button onclick="analisar()">Testar minha sorte</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var numero = Number(in_sorte.value)
+        var contador = 1
+        while (true){
+            var sorteio = parseInt(Math.random()* 100)
+            if(sorteio == numero && contador < 21){
+                div_mensagem.innerHTML = `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${contador}º sorteio`
+                break
+            } else if(contador > 21){
+                div_mensagem.innerHTML = `É, você não tem muita sorte em sorteios, pelo visto`
+                break
+            }
+       contador++}
+    }
+</script>

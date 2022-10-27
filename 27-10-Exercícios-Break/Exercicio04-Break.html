@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Selecione sua equipe <select id="sel_grupo">
+    <option value="D">DC</option>
+    <option value="M">MARVEL</option>
+</select>
+<button onclick="analisar()">Ver programação semanal na TV</button>
+<div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var equipe = sel_grupo.value
+        var contador = 0
+        while(contador < 6){
+        var sorteio = parseInt(Math.random()*6)
+            if(equipe == "D" && sorteio < 4){
+                div_mensagem.innerHTML = `Você verá um filme que gosta no ${sorteio}º dia`
+            }
+            if(equipe == "M" && sorteio > 3){
+                div_mensagem.innerHTML = `Você verá um filme que gosta no ${sorteio}º dia`
+            }
+
+       contador++}
+    }
+</script>
