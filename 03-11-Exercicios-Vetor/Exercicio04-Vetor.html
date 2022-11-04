@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o filme favorito:<input type="text" id="in_filme"><br>
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <button onclick="favoritos()">Ver favoritos</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let filme = []
+    function cadastrar(){
+         filme.push(in_filme.value)
+    }
+    function favoritos(){
+        div_mensagem.innerHTML = ``
+        for(var contador = 0; contador < filme.length; contador++){
+            var filmes = filme[contador]
+        div_mensagem.innerHTML = `A - ${filme[0]}<br>`
+        div_mensagem.innerHTML += `${filme}<br>`
+        div_mensagem.innerHTML += `B - ${filme[filme.length-1]}<br>`
+    }
+    div_mensagem.innerHTML += `Total: ${filme.length}<br>`
+    div_mensagem.innerHTML += ` O que mais gosta é A <br>`
+    div_mensagem.innerHTML += ` E desses, o que menos gosta é B`
+}
+</script>

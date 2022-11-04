@@ -20,12 +20,12 @@ Selecione sua equipe <select id="sel_grupo">
         var equipe = sel_grupo.value
         var contador = 0
         while(contador < 6){
-        var sorteio = parseInt(Math.random()*6)
-            if(equipe == "D" && sorteio < 4){
+        var sorteio = parseInt(1 + Math.random()*6)
+            if(equipe == "D"){
                 div_mensagem.innerHTML = `Você verá um filme que gosta no ${sorteio}º dia`
             }
-            if(equipe == "M" && sorteio > 3){
-                div_mensagem.innerHTML = `Você verá um filme que gosta no ${sorteio}º dia`
+            if(equipe == "M"){
+                div_mensagem.innerHTML = `É, ou lê um livro ou assiste um filme que não gosta mesmo`
             }
 
        contador++}
