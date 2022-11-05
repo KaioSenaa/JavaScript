@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Produto: <br><input type="text" id="in_produto"><br>
+    Tipo: <br>
+    <select id="sel_tipo">
+        <option value="gerais">Gerais</option>
+        <option value="alimentos">Alimentos</option>
+        <option value="eletronicos">Eletrônicos</option>
+    </select><br>
+
+    Preço do Produto: <br><input type="text" id="in_preco"><br>
+    <button onclick="registrar()">Registrar produto</button>
+    <button onclick="verificar()">Verificar Produtos</button>
+    <br>
+    <div id="div_mensagem"></div><br><br><br>
+
+    <h2>Filtros</h2>
+    Filtrar por nome: <br><input type="text" id="in_pesq">
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    Pesquisar por tipo: <select id="sel_filtro">
+        <option value="gerais">Gerais</option>
+        <option value="alimentos">Alimentos</option>
+        <option value="eletronicos">Eletrônicos</option>
+    </select>
+    <button onclick="procurar()">Procurar</button>
+
+    <div id="div_filtro"></div>
+
+</body>
+
+</html>
+<script>
+    var produtos = []
+    function registrar() {
+        var tipo = sel_tipo.value
+        div_mensagem.innerHTML = ``
+        var produto = {
+            nome: in_produto.value,
+            preco: in_preco.value
+        }
+        if (in_produto.value == "" || in_preco.value == "") {
+            alert(`Inválido! Verifique o preenchimento dos campos e tente novamente!`)
+        } else {
+            produtos.push(produto)
+        }
+    }
+    function verificar() {
+        div_mensagem.innerHTML = ``
+        if (produtos[0] == undefined) {
+            alert(`Não há produtos registrados na lista!`)
+        } else {
+            for (var contador = 0; contador < produtos.length; contador++) {
+                var atual = produtos[contador]
+                div_mensagem.innerHTML += `Produto: ${atual.nome}<br>Preço: R$ ${atual.preco}<br><br>`
+            }
+        }
+    }
+    var produtosfiltrados = []
+    function pesquisar() {
+        div_filtro.innerHTML = ``
+        var filtro = in_pesq.value  
+        if (produtos.length > 0) {
+            for (var atual = 0; atual < produtos.length; atual++) {
+                if (filtro == produtos[atual].nome) {
+                    produtosfiltrados.push(produtos[atual])
+                }
+            }
+            if(produtosfiltrados.length > 0){
+                div_filtro.innerHTML = `Produtos encontrados na busca por ${filtro}<br>`
+                for(atual = 0; atual < produtosfiltrados.length; atual++){
+                div_filtro.innerHTML += `Produto: ${produtosfiltrados[atual].nome}<br> R$ ${produtosfiltrados[atual].preco}<br><br>`
+                }
+            }
+        } else{
+            div_filtro.innerHTML = `Produto não existe`
+        }
+    }
+    function procurar(){
+        div_filtro.innerHTML = ``
+        var filtro = sel_filtro.value
+        if(produtos.length > 0){
+            for(var atual = 0; atual < produtos.length; atual++){
+                if(filtro == produtos[atual].nome){
+                    produtosfiltrados.push(produtos[atual])
+                }
+            } if(produtosfiltrados.length > 0){
+                div_filtro.innerHTML = `Produtos encontrados com o filtro ${filtro}<br>`
+                for(atual = 0;atual < produtosfiltrados.length; atual++){
+                    div_filtro.innerHTML += `Produto: ${produtosfiltrados[atual].nome}<br> R$ ${produtosfiltrados[atual].preco}`
+                }
+            }
+        } else{
+            div_filtro.innerHTML = `Não há nenhum produto deste tipo registrado!`
+        }
+
+    }
+</script>

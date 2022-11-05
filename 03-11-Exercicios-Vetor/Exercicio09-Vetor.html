@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome de cada projeto criado: <input type="text" id="in_nome"><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="relembrar()">Mostrar Projetos</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var projeto = []
+    function registrar() {
+        div_mensagem.innerHTML = ``
+        projeto.push(in_nome.value)
+        for (var contador = 0; contador < projeto.length; contador++) {
+              projetos = projeto[contador]
+            if (projeto.length < 4) {
+                div_mensagem.innerHTML = `Você já fez ${projeto.length} projeto(s). Por isso você é um profissional Junior`
+            } else if (projeto.length < 12) {
+                div_mensagem.innerHTML = `Você já fez ${projeto.length} projetos. Por isso você é um profissional pleno desde o projeto ${projeto[3]} `
+            } else if (projeto.length >= 12) {
+                div_mensagem.innerHTML = `Você já fez ${projeto.length} projetos. Por isso você é um profissional Sênior desde o projeto ${projeto[12]} `
+            }
+        }
+    }
+    function relembrar(){
+        div_mensagem.innerHTML = ``
+        for(var contador = projeto.length - 1; contador >= 0; contador--){
+            projetos = projeto[contador]
+            div_mensagem.innerHTML += `${contador + 1} - ${projetos}<br>`
+        }
+    }
+</script>
