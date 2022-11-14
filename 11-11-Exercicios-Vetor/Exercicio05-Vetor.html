@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do Produto: <input type="text" id="in_nome">
+    Preço da compra: <input type="number" id="in_preco"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var Produto = []
+    var preco = []
+    function cadastrar(){
+        Produto.push(in_nome.value)
+        preco.push (in_preco.value)
+
+    }
+    function relatorio(){
+        div_mensagem.innerHTML = `Total de produtos: ${Produto.length}<br>`
+        div_mensagem.innerHTML = ``
+        var SomaTotal = 0
+        for (var contador = 0; contador < Produto.length && contador < preco.length; contador++) {
+            var Produtos = Produto[contador];
+            var maior = Math.max.apply(null, preco);
+            var barato = Math.min.apply(null, preco)
+            var precos = preco[contador];
+            var venda = precos * 1.25
+            SomaTotal += precos
+                div_mensagem.innerHTML += `Produto: ${contador+1}: ${Produtos} <br>
+                Preço da compra:R$ ${precos}. Vender por R$${venda}<br>`
+                div_mensagem.innerHTML += `Produto mais caro: ${maior.toString()}<br>`
+                div_mensagem.innerHTML += `Produto mais caro: ${barato.toString()}<br>`
+                div_mensagem.innerHTML += `Media do preco dos produtos: ${SomaTotal/Produtos.length}`
+    }
+        
+    }
+</script>

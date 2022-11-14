@@ -16,13 +16,13 @@
     var fruta = ["maça","manga","morango","Abacaxi"]
     function pesquisar(){
         var resultado = fruta.indexOf(in_fruta.value)
+        var pesquisar = in_fruta.value
         var frase
-        for(var cont = 0; cont < fruta.length;  cont++)
-        frutas = fruta[cont]
         if(resultado < 0){
-            frase = `Não existe a fruta ${resultado} na lista`
+            frase = `Não existe a fruta ${pesquisar} na lista`
         } else{
-            frase = `A fruta ${resultado} existe na lista`
+            frase = `A fruta ${fruta[resultado]} existe na lista`
         } div_mensagem.innerHTML = frase
-    } 
+    }
+
 </script>

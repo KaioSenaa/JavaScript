@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,36 +28,4 @@
         } 
         total.innerHTML = filme.length
     }
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input type="text" id="in_filme"><br>
-    <div id="div_mensagem">
-        Seu Filme favorito:<b id="favorito"></b><br> 
-        Seu 3º filme favorito:<b id="terceiro"></b><br>
-        Total de filmes cadastrados:<b id="total"></b><br>
-    </div>
-    <button onclick="cadastrar()">Cadastrar</button>
-</body>
-</html>
-<script>
-    var filme = []
-    function cadastrar(){
-        filme.push(in_filme.value)
-        in_filme.value = ""
-        favorito.innerHTML = filme[0]
-        terceiro.innerHTML = filme[2]
-        if(filme[2] == ""){
-            terceiro.innerHTML = `Ainda não existe`
-        } 
-        total.innerHTML = filme.length
-    }
->>>>>>> 1e4fd3d7f3fba8441f7d65c031dc0813aa76ab94
 </script>

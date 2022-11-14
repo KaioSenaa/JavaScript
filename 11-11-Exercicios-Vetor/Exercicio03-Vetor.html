@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+     <h1>Time de Futebol</h1>
+     <h3><i>Indique o resultado</i></h3>
+     <select name="" id="sel_combo">
+          <option value="vitoria">Vitória</option>
+          <option value="empate">Empate</option>
+          <option value="derrota">Derrota</option>
+     </select>
+
+     <input type="number" placeholder="Indique qual jogo que saber resultado" id="in_jogo" onkeyup="procurar()">
+
+     <button onclick="registrar()">Registrar jogo</button>
+     <div id="resultado"></div>
+     <div id="resultado1"></div>
+
+
+</body>
+
+</html>
+<script>
+
+     var contador = 0
+     var resultados = []
+
+     var placar = {
+          vitoria: [],
+          empate: [],
+          derrota: [],
+     }
+
+     function registrar() {
+          var lista = sel_combo.value
+
+          if (lista == 'vitoria') {
+               placar.vitoria.push([0])
+               resultados.push('vitoria')
+               contador++
+          } else if (lista == 'empate') {
+               placar.empate.push([1])
+               resultados.push('empate')
+               contador++
+          } else if (lista == 'derrota') {
+               placar.derrota.push([2])
+               resultados.push('derrota')
+               contador++
+          }
+
+
+
+          resultado.innerHTML = `  O time teve: ${(placar.vitoria.length * 3)} vitórias, ${placar.empate.length} empates, 0 derrotas <br>
+
+                              Pontuação total: ${((placar.vitoria.length * 3)) + placar.empate.length} pontos <br>
+
+                              Aproveitamento: ${(((((placar.vitoria.length * 3)) + placar.empate.length) / (contador * 3)) * 100).toFixed(0)}% <br>
+                              
+                              `
+
+     }
+
+     function procurar() {
+          var jogo = Number(in_jogo.value)
+          resultado1.innerHTML = ``
+
+
+          if(contador < jogo) {
+               resultado1.innerHTML = `Não foi cadastrado um ${jogo}º jogo`
+          } else {
+               resultado1.innerHTML = ` No ${jogo}º jogo, o time ${resultados[jogo - 1]}`
+          }
+     }
+</script>

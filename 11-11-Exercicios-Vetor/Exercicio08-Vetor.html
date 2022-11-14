@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="color:#c0504d ;">
+    <div id="div_registro">
+        <h1>Análise de perfomace de alunos - Registro</h1>
+        Entre com o nome do aluno: <input style="border:#ed8137 solid 1px ;" type="text" id="in_nome"><br>
+        Entre com a 1º nota do aluno: <input style="border:#ed8137 solid 1px ;" type="number" id="in_nota"><br>
+        Entre com a 2º nota do aluno: <input style="border:#ed8137 solid 1px ;" type="number" id="in_nota2"><br>
+        Entre com a 3º nota do aluno: <input style="border:#ed8137 solid 1px ;" type="number" id="in_nota3"><br>
+        <button style="border: #f7c4a2 solid 1px; color: #984806; background-color: #FFFFFF"
+            onclick="registrar()">Registrar</button>
+        <button style="color: #984806; border: #f7c4a2 solid 1px; background-color: #FFFFFF;"
+            onclick="analisar()">Analisar</button>
+        <div id="div_mensagem"></div>
+    </div>
+    <div id="div_analise"></div>
+    <div id="div_analise2"></div>
+
+</body>
+
+</html>
+<script>
+    var nome = []
+    var nota = []
+    var nota2 = []
+    var nota3 = []
+    function registrar() {
+        div_mensagem.innerHTML = ``
+        if (in_nome.value == "" || in_nota.value == "" || in_nota.value < 0 || in_nota.value > 10 || in_nota2.value == "" || in_nota2.value > 10 || in_nota2.value < 0 || in_nota3.value > 10 || in_nota3.value < 0 || in_nota3.value == "") {
+            alert(`Campo de nome ou nota inválido`)
+        } else {
+            nome.push(in_nome.value)
+            nota.push(Number(in_nota.value))
+            nota2.push(Number(in_nota2.value))
+            nota3.push(Number(in_nota3.value))
+
+            for (let contador = nome.length - 1, contador1 = nota.length - 1, contador2 = nota.length - 1, contador3 = nota.length - 1; contador >= 0 && contador1 >= 0 && contador2 >= 0 && contador3 >= 0; contador-- && contador1-- && contador2-- && contador3--) {
+                const notas = nota[contador1];
+                const notas2 = nota2[contador2];
+                const notas3 = nota3[contador3];
+                const nomes = nome[contador];
+                div_mensagem.innerHTML += `<br>AC1 - ${nomes} - ${notas}<br>`
+                div_mensagem.innerHTML += `<br>AC2 - ${nomes} - ${notas2}<br>`
+                div_mensagem.innerHTML += `<br>AC3 - ${nomes} - ${notas3}<br>`
+            }
+        }
+    }
+    function analisar() {
+        div_registro.innerHTML = ``
+        div_analise.innerHTML = `<h1>Análise de perfomace de alunos - Registro</h1>
+    Entre com o intervalo de notas: <input placeholder="De" style="border:#ed8137 solid 1px ;  color:#cda836 ;" type="text" id="in_de">
+   <input placeholder="Até" style="border:#ed8137 solid 1px ; color:#cda836 ;" type="number" id="in_ate"><br>
+    <button style="border: #f7c4a2 solid 1px; color: #984806; background-color: #FFFFFF"
+        onclick="Pesquisar()">Pesquisar</button>`
+    }
+    function Pesquisar() {
+        div_analise2.innerHTML = ``
+        var contador2 = 0
+        var contador3 = 0
+        var ate = Number(in_ate.value)
+        var de = Number(in_de.value)
+        var SomaNotas = 0
+        if (de == "" || ate == "" || de < 0 || ate > 10) {
+            alert(`Valores de notas incorretos`)
+        } else {
+            for (contador2 = 0; contador2 < nota.length; contador2++) {
+                var maior = Math.max.apply(null, nota || nota2 || nota3);
+                var menor = Math.min.apply(null, nota || nota2 || nota3);
+                SomaNotas += nota[contador2]
+                if (nota[contador2] >= de && nota2[contador2] >= de && nota3[contador2] >= de && nota[contador2] <= ate && nota2[contador2] <= ate && nota3[contador2] <= ate) {
+                    contador3++
+                    div_analise2.innerHTML += `O aluno ${nome[contador2]} ficou com as notas ${nota[contador2]}<br> - ${nota2[contador2]}<br> - ${nota3[contador2]}<br><br>`
+                }
+            }
+            div_analise2.innerHTML += `Total de alunos registrados: ${nome.length}<br>`
+            div_analise2.innerHTML += `Total de alunos listados: ${contador3}<br>`
+            div_analise2.innerHTML += `Maior nota = ${maior}<br>`
+            div_analise2.innerHTML += `Menor nota = ${menor}<br>`
+            div_analise2.innerHTML += `Média da nota = ${SomaNotas / nota.length}`
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Preço do produto: <input type="number" id="in_preco"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Estoque</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var vetor = []
+    function cadastrar(){
+        vetor.push (Number(in_preco.value))
+    }
+    function atualizar(){
+        var soma = 0 
+        for(var conta = 0; conta < vetor.length; conta++)  
+        soma = soma + vetor[conta]
+        div_mensagem.innerHTML = `Você tem ${vetor.length} produto(s) cadastrados em estoque <br> <br>
+        Seu estoque vale R$ ${soma.toFixed(2)}`
+    }
+
+</script>
